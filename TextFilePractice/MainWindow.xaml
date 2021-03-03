@@ -32,18 +32,19 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="1" Grid.Row="1" FontSize="36" Grid.ColumnSpan="3" Text="Text File Challenge" Margin="0,0,0,10"/>
-        <TextBlock Grid.Row="2" Grid.Column="1" FontSize="20" Text=" First name: " />
-        <TextBox Grid.Row="2" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15"/>
+        <TextBlock  Grid.Row="2" Grid.Column="1" FontSize="20" Text=" First name: " />
+        <TextBox x:Name="firstName" Grid.Row="2" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15" />
         <TextBlock Grid.Row="3" Grid.Column="1" FontSize="20" Text=" Last name: " />
-        <TextBox Grid.Row="3" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15"/>
+        <TextBox x:Name="lastName" Grid.Row="3" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15"/>
         <TextBlock Grid.Row="4" Grid.Column="1" Text=" Age: " FontSize="20" />
-        <TextBox Grid.Row="4" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15"/>
+        <TextBox x:Name="age" Grid.Row="4" Grid.Column="2" Width="150" MinHeight="28" Margin="14,0,13,15"/>
         <TextBlock Grid.Row="5" Grid.Column="1" Text=" Is Alive: " FontSize="20" Margin="0,0,0,15"/>
-        <CheckBox Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" Margin="5,10,0,20"/>
-        <Button Grid.Row="6" Grid.Column="1" Content="Add User" Height="40" Grid.ColumnSpan="3" Margin="0,2,0,6" FontSize="20"/>
-        <Button Grid.Row="7" Grid.Column="1" Content="Save List" Height="40" Grid.ColumnSpan="3" FontSize="20" Margin="0,2,0,1"/>
+        <CheckBox x:Name="checkBox" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center" Margin="5,10,0,20"/>
+        <Button x:Name="addUser" Grid.Row="6" Grid.Column="1" Content="Add User" Height="40" Grid.ColumnSpan="3" Margin="0,2,0,6" FontSize="20" Click="addUser_Click"/>
+        <Button x:Name="saveList" Grid.Row="7" Grid.Column="1" Content="Save List" Height="40" Grid.ColumnSpan="3" FontSize="20" Margin="0,2,0,1" Click="saveList_Click"/>
 
-        <ListBox Grid.Column="5" Grid.Row="2" Grid.RowSpan="6" Margin="1,0,0,0" Grid.ColumnSpan="3"/>
+        <ListBox x:Name="personList" Grid.Column="5" Grid.Row="2" Grid.RowSpan="6" Margin="1,0,0,0" Grid.ColumnSpan="3" />
+        
 
 
 

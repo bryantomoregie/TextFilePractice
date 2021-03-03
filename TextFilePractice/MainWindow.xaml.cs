@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace TextFilePractice
 {
@@ -20,9 +21,38 @@ namespace TextFilePractice
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<string> lines = new List<string>();
+        List<Array> arrayList = new List<Array>();
+        string filePath = @"C:\Users\bryant\source\repos\TextFilePractice\TextFilePractice\StandardDataSet.txt";
         public MainWindow()
         {
+            //personList.Items.Add(item);
             InitializeComponent();
+            lines = File.ReadAllLines(filePath).ToList();
+            foreach (var item in lines)
+            {
+                var arr = item.Split(',');
+                arrayList.Add(arr);
+            }
+
+            foreach (var item in arrayList)
+            {
+                var str = $"{item[0] }";
+            }
+        }
+
+        private void addUser_Click(object sender, RoutedEventArgs e)
+        {
+            string[] strArray = new string[] { "Jordan,Jones,41,1" };
+            personList.Items.Add($"{firstName.Text},{lastName.Text},{age.Text},{checkBox.IsChecked}");
+        }
+
+        private void saveList_Click(object sender, RoutedEventArgs e)
+        {
+            lines.Add($"{firstName.Text},{lastName.Text},{age.Text},{checkBox.IsChecked}");
+            File.WriteAllLines(filePath, lines);
         }
     }
 }
+
+
